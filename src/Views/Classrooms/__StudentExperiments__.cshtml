@@ -1,0 +1,23 @@
+@model Course
+@{
+    Layout = "_LayoutStudentClassroom";
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+@{
+    switch (Model.CourseName)
+    {
+        case "Physics" :
+            <partial name="_ExpPhysicsPartialStudent"/>
+            break;
+            
+        case "Chemistry" :
+            <partial name="_ExpChemistryPartialStudent"/>
+            break;
+            
+         default:
+             <partial name="_ErrorClassroomPartial"/>
+             break;
+    }
+}
